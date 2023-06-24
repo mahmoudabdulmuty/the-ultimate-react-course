@@ -1,7 +1,15 @@
-function Skill({ skill, bg, icon }) {
+function Skill({ skill }) {
+  const emoji =
+    skill.level === 'advanced'
+      ? '💪'
+      : skill.level === 'intermediate'
+      ? '👍'
+      : '👶';
+
   return (
-    <div style={{ background: bg }} className='skill'>
-      {skill} {icon}
+    <div style={{ backgroundColor: skill.color }} className='skill'>
+      <span>{skill.name}</span>
+      <span>{emoji}</span>
     </div>
   );
 }

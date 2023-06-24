@@ -1,15 +1,17 @@
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
-  const closeHour = 22;
+  const openHour = 9;
+  const closeHour = 17;
+  const isOpen = hour >= openHour && hour <= closeHour;
 
-  if (hour > closeHour) {
-    alert('we are closed');
-  } else if (hour < openHour) {
-    alert('we are still not open');
-  }
-
-  return <footer className="footer">{hour}</footer>;
+  return (
+    <footer className='footer'>
+      <div className="order">
+        <p>{isOpen && "We're Currently Open"}</p>
+        <button className='btn'>Order</button>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

@@ -1,4 +1,4 @@
-import pizzaData from '../pizzaData';
+import Pizzas from '../pizzaData';
 import Pizza from './Pizza';
 
 function Menu() {
@@ -6,9 +6,8 @@ function Menu() {
     <main className='menu'>
       <h2>Our Menu</h2>
       <ul className='pizzas'>
-        {pizzaData.map((pizza, index) => (
-          <Pizza pizzaObj={pizza} key={index} />
-        ))}
+        {Pizzas.length > 0 &&
+          Pizzas.map((pizza, index) => <Pizza pizzaObj={pizza} key={index} />)}
       </ul>
     </main>
   );

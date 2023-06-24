@@ -1,11 +1,14 @@
 function Pizza({ pizzaObj }) {
+  const pizzaClass = `pizza ${pizzaObj.soldOut ? 'sold-out' : ''}`;
+  const displayPrice = pizzaObj.soldOut ? 'SOLD OUT' : pizzaObj.price;
+
   return (
-    <li className='pizza'>
+    <li className={pizzaClass}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price}</span>
+        <span>{displayPrice}</span>
       </div>
     </li>
   );
